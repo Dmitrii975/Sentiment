@@ -7,7 +7,7 @@ import pandas as pd
 def train(df):
     model_emb, embs = embed_and_save_if_not(df['text'].values)
 
-    encoder, model = train_logistic(embs, df['sentiment'], create_test=False)
+    model, encoder = train_logistic(embs, df['sentiment'], create_test=False)
 
     return model_emb, model, encoder
 
